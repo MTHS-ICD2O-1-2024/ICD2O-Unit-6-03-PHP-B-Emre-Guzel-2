@@ -23,7 +23,6 @@
 
 <body onload>
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <script src="js/script.js"></script>
   <div class="container">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
@@ -31,18 +30,29 @@
           <span class="mdl-layout-title">Weather app</span>
         </div>
       </header>
+
       <h3 class="wather-title">Curently weather in Ottawa is... </h3>
-      <img class="Calculate" src="" id="weatherImage" alt="wehater icon  ">
+      <img class="Calculate" src="" name="weatherImage" alt="wehater icon">
       <br>
-      <div id="result"></div>
-      <form action="">
+      <?php
+      if (isset($_GET['submit'])) {
+        try{
+          $url = 'https://api.openweathermap.org/data/2.5/weather?lat=45.4211435&lon=-75.6900574&appid=f5cce8e3a6c922f1fdf3bd14085cd28e';
+        }
+      } catch {
+      }
+      ?>
+      <!-- Form added with submit button -->
+      <form action="index.php" method="GET">
         <main class="mdl-layout__content">
-          <button id="click" type="button" onclick="wheaterAppBtn()"
+          <button id="click" name="submit"
             class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
             Check the Weather
           </button>
         </main>
       </form>
+    </div>
+  </div>
 </body>
 
 </html>
