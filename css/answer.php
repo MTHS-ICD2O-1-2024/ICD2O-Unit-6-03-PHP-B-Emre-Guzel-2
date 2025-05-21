@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Wather app" />
+  <meta name="description" content=" Looping numbers " />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Emre Guzel" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -18,31 +18,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="css/style.css">
-  <title>Weather app</title>
+  <title>Looping numbers </title>
 </head>
 
-<body onload>
-  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <script src="js/script.js"></script>
-  <div class="container">
+<body>
+  <div class="container-2">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Weather app</span>
+          <span class="mdl-layout-title">Looping numbers </span>
         </div>
       </header>
-      <h3 class="wather-title">Curently weather in Ottawa is... </h3>
-      <img class="Calculate" src="" id="weatherImage" alt="wehater icon  ">
-      <br>
-      <div id="result"></div>
-      <form action="">
-        <main class="mdl-layout__content">
-          <button id="click" type="button" onclick="wheaterAppBtn()"
-            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-            Check the Weather
-          </button>
-        </main>
-      </form>
-</body>
+      <main class="mdl-layout__content">
+        <div class="right-image">
+        </div>
+        <br><br>
+        <?php
+        ?>
+        <br /> <br>
+        <div class="page-content-answer">
+          &nbsp; <a href="./index.php">Return ...</a>
+        </div>
+        <br>
+      </main>
+    </div>
 
-</html>
+</body>
