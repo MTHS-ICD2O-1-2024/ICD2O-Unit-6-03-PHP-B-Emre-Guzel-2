@@ -32,16 +32,35 @@
       </header>
 
       <h3 class="wather-title">Curently weather in Ottawa is... </h3>
-      <img class="Calculate" src="" name="weatherImage" alt="wehater icon">
+      <img class="Calculate" src="" name="weatherImage">
       <br>
       <?php
+
       if (isset($_GET['submit'])) {
-        try{
+        try {
           $url = 'https://api.openweathermap.org/data/2.5/weather?lat=45.4211435&lon=-75.6900574&appid=f5cce8e3a6c922f1fdf3bd14085cd28e';
+
+          // Get and decode JSON
+          $response = file_get_contents($url);
+          $jsonData = json_decode($response);
+
+          // Extract temp and icon
+          $temp = $jsonData->main->temp;
+          $iconCode = $jsonData->weather[0]->icon;
+          $iconUrl = 'https://openweathermap.org/img/wn/' . $iconCode . '@2x.png';
+
+          // Set image URL (optional, but you were assigning it to $_GET, which is not needed)
+          $weatherImage = $iconUrl;
+
+          // Print temperature in Celsius
+          echo '<img class="Calculate" src="' . $iconUrl . '" alt="weather icon">';
+          echo "<b>" . "&nbsp" . "&nbsp" . "&nbsp" . round($temp - 273.15) . "°C" . "</b>";
+        } catch (Exception $error) {
+          error_log("Error: " . $error->getMessage());
         }
-      } catch {
       }
       ?>
+      <br>
       <!-- Form added with submit button -->
       <form action="index.php" method="GET">
         <main class="mdl-layout__content">
